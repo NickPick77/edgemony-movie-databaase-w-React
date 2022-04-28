@@ -2,13 +2,13 @@
 const BASE_URL = "https://edgemony-backend.herokuapp.com/movies";
 
 //function for fetch promise
-const http = (resource, options) => fetch(BASE_URL + resource, options).then((result) => result.json());
+const http = (resource = "", options) => fetch(`${BASE_URL}/${resource}`, options).then((result) => result.json());
 // GET
 export const GETMoviesData = (resource) => http(resource, { method: "GET" });
 
 //POST
-export const POSTMovieData = (body) =>
-    http(null,
+export const POSTMovieData = (resource, body) =>
+    http(resource,
         {
             method: "POST",
             headers: {
@@ -22,10 +22,10 @@ export const POSTMovieData = (body) =>
 export const DELETEMovieData = (id) => http(`/${id}`, { method: "DELETE" });
 
 //PUT
-const PUTMovieData = (body) =>
-    http(null,
+export const PUTMovieData = (id, body) =>
+    http(id,
         {
-            method: "POST",
+            method: "PUT",
             headers: {
                 "content-type": "application/json",
             },

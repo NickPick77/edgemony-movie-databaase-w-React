@@ -8,11 +8,18 @@
     border-radius: 16px;
     padding: 10px;
 
+    >img {
+        width: 200px;
+    }
+
+    >button {
+        margin-top: 20px;
+        align-self: flex-start;
+    }
+
+
 }
 
-.CardItem>img {
-    width: 200px;
-}
 
 .genre {
     width: inherit;
