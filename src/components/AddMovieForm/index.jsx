@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useLocation } from "react-router-dom";
-import { POSTMovieData, PUTMovieData } from "../../utils/utils";
+import { POST, PUT } from "../../utils/utils";
 import styles from "./styles.module.scss";
 
 export function AddMovieForm({ setModalVisibility, callType, text }) {
@@ -19,7 +19,7 @@ export function AddMovieForm({ setModalVisibility, callType, text }) {
         e.preventDefault();
 
         if (callType === "POST") {
-            POSTMovieData("", {
+            POST("", {
                 title,
                 year,
                 imgUrl,
@@ -29,7 +29,7 @@ export function AddMovieForm({ setModalVisibility, callType, text }) {
 
             setModalVisibility(true);
         } else {
-            PUTMovieData(movieId, {
+            PUT(movieId, {
                 title,
                 year,
                 imgUrl,

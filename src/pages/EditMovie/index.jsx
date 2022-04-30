@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { GETMoviesData } from "../../utils/utils";
+import { GET } from "../../utils/utils";
 
 import { CardItem } from "../../components/CardItem";
 import { AddMovieForm } from "../../components/AddMovieForm";
@@ -13,7 +13,7 @@ export function EditMovie() {
     const movieId = location.pathname.split("/").reverse()[0];
 
     useEffect(() => {
-        GETMoviesData(movieId).then((data) => setMovieData(data));
+        GET(movieId).then((data) => setMovieData(data));
     }, []);
 
     return (
