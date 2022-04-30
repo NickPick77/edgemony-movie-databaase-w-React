@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 export function CardItem({ cardData }) {
     return (
         <div className={styles.CardItem}>
-            <button value={cardData.id} onClick={(e) => DELETEMovieData(e.target.value)}>Remove</button>
+            <button value={cardData.id} onClick={(e) => DELETEMovieData(e.target.value).then((e) => window.location.reload(false))}>Remove</button>
             <Link to={`/edit-movie/${cardData.id}`}>
                 <h2>{cardData.title}</h2>
             </Link>
