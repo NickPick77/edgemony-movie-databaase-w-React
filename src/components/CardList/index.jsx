@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { CardItem } from '../CardItem';
-import { GET, DELETE } from '../../utils/utils';
+import { GET } from '../../utils/utils';
 import styles from './styles.module.scss';
 
 export function CardList({ searchInput }) {
@@ -13,9 +13,14 @@ export function CardList({ searchInput }) {
         GET().then((movie) => setMoviesData(movie))
 
     }, []);
+    useEffect(() => {
+
+        GET().then((movie) => setMoviesData(movie))
+
+    }, [update]);
 
     return (
-        <div className={styles.CardList} value={update}>
+        <div className={styles.CardList} >
             <ul className={styles.CardList_container}>
                 {moviesData &&
                     moviesData.filter((movie) => movie.title.toLowerCase().trim().includes(searchInput)) //|| movie.genres.toLowerCase().trim().includes(searchInput))

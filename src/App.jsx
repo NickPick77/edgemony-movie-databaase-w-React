@@ -3,7 +3,6 @@ import AppStyles from './AppStyles.module.scss';
 import { HomePage } from './pages/HomePage';
 import { AddMovie } from './pages/AddMovie';
 import { EditMovie } from './pages/EditMovie';
-import { SearchBar } from './components/SearchBar';
 
 function App() {
 
@@ -24,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/edit-movie/:id" element={<EditMovie />} />
           <Route path="/add-movie" element={<AddMovie />} />
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" index element={<HomePage />} />
         </Routes>
 
       </div>

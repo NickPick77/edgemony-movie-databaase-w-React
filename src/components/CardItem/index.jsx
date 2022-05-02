@@ -1,19 +1,18 @@
-import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
 import { DELETE } from '../../utils/utils';
 import styles from './styles.module.scss';
 
 
 export function CardItem({ cardData, update, setUpdate }) {
-    const [updated, setUpdated] = useState(false)
 
     const DeleteMovieData = (e) => {
-        DELETE(e.target.value).then(() => setUpdate(true)).then(() => setUpdated(true))
+        DELETE(e.target.value).then(() => setUpdate(!update))
     }
 
 
     return (
-        <div className={styles.CardItem} updated={update}>
+        <div className={styles.CardItem}  >
             <button value={cardData.id} onClick={(e) => DeleteMovieData(e)}>❌</button>
             <Link to={`/edit-movie/${cardData.id}`}>
                 <h2>{cardData.title}</h2>
