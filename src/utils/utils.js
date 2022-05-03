@@ -19,7 +19,7 @@ export const POST = (resource, body) =>
 
 
 //DELETE
-export const DELETE = (id) => http(`/${id}`, { method: "DELETE" });
+export const DELETE = (id) => http(`${id}`, { method: "DELETE" });
 
 //PUT
 export const PUT = (id, body) =>

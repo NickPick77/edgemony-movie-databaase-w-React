@@ -6,13 +6,13 @@ import styles from "./styles.module.scss";
 
 
 export function AddMovie() {
-    const [isModalVisibile, setModalVisibility] = useState(false);
+    const [modalVisibility, setModalVisibility] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
             setModalVisibility(false);
         }, 3000);
-    }, [isModalVisibile]);
+    }, [modalVisibility]);
 
 
 
@@ -23,7 +23,8 @@ export function AddMovie() {
                 <AddMovieForm setModalVisibility={setModalVisibility} callType="POST" text="Add Movie!" />
                 <Modal
                     text="Un nuovo film è stato aggiunto alla lista!"
-                    isVisibile={isModalVisibile}
+                    isVisible={modalVisibility}
+                    colorClass={"green"}
                 />
             </section>
         </>

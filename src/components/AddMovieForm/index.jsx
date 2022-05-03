@@ -36,6 +36,7 @@ export function AddMovieForm({ setModalVisibility, callType, text }) {
                 genres: unStringifyGenres(genres),
                 description,
             });
+            setModalVisibility(true);
         }
     };
 
