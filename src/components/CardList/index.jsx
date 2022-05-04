@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import { CardItem } from '../CardItem';
 import { GET } from '../../utils/utils';
 import styles from './styles.module.scss';
-import { Modal } from '../Modal';
 
-export function CardList({ searchInput, modalVisibility, IdMoviesData, update, setUpdate }) {
+export function CardList({ searchInput, modalVisibility, setMovieData, update, setModalInput }) {
     //const [modalVisibility, setModalVisibility] = useState(false);
     const [moviesData, setMoviesData] = useState([]);
 
@@ -29,7 +28,13 @@ export function CardList({ searchInput, modalVisibility, IdMoviesData, update, s
                 {moviesData &&
                     moviesData.filter((movie) => movie.title.toLowerCase().trim().includes(searchInput))
                         .map((movie) => (
-                            <CardItem cardData={movie} key={movie.id} modalVisibility={modalVisibility} IdMoviesData={IdMoviesData} />
+                            <CardItem
+                                cardData={movie}
+                                key={movie.id}
+                                modalVisibility={modalVisibility}
+                                setMovieData={setMovieData}
+                                setModalInput={setModalInput}
+                            />
                         ))}
             </ul>
         </div>

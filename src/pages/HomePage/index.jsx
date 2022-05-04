@@ -1,37 +1,41 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { DELETE } from "../../utils/utils";
+import { useState } from "react";
+
 import { CardList } from "../../components/CardList";
 import { Modal } from "../../components/Modal";
 import { SearchBar } from "../../components/SearchBar";
 import styles from "./styles.module.scss";
 
-export function HomePage() {
-    const navigate = useNavigate()
+
+export default function HomePage({ DeleteMovieData, modalInput, setModalInput, modalVisibility, setModalVisibility, movieData, setMovieData }) {
+
     const [update, setUpdate] = useState(false)
-    const [modalVisibility, setModalVisibility] = useState(false);
+    //const [modalVisibility, setModalVisibility] = useState(false);
     const [searchInput, setSearchInput] = useState("")
-    const [movieData, setMovieData] = useState([])
-    const modalInput = { ...{ yes: "yes", no: "no" } }
+    //const [movieData, setMovieData] = useState([])
+    //const modalInput = { ... }
 
     // useEffect(() => {
-    //     setTimeout(() => {
-    //         setModalVisibility(false);
-    //     }, 3000);
-    // }, [modalVisibility]);
+    //     
 
-    const DeleteMovieData = () => {
-
-        DELETE(movieData)
-            .then(() => {
-                console.log()
-                setUpdate(!update);
-                navigate("/")
-                setModalVisibility(true)
-                console.log("homepage", movieData.id)
-            })
-
-    }
+    //const DeleteMovieData = (e) => {
+    //
+    //    DELETE(e)
+    //        .then(() => {
+    //            console.log(e)
+    //            setUpdate(!update);
+    //            navigate("/")
+    //            setModalVisibility(!true)
+    //            setModalInput({ text: "Film eliminato correttamente" })
+    //            console.log("homepage", movieData.id)
+    //        }).then(() => {
+    //            setModalVisibility(true)
+    //            setTimeout(() => {
+    //                setModalVisibility(false);
+    //            }, 3000);
+    //
+    //        })
+    //
+    //}
 
 
 
@@ -39,8 +43,24 @@ export function HomePage() {
         <>
             <section className={styles.HomePage_section}>
                 <SearchBar searchResult={setSearchInput} searchInput={searchInput} />
-                <CardList searchInput={searchInput} modalVisibility={setModalVisibility} IdMoviesData={setMovieData} Update={update} />
-                <Modal modalInput={modalInput} isVisible={modalVisibility} colorClass={"red"} deleter={DeleteMovieData} />
+
+                <CardList
+                    searchInput={searchInput}//pass input data to Cardlist components
+                    setModalVisibility={setModalVisibility}// pass the setState for modal visibility
+                    setMovieData={setMovieData}
+                    update={update}//pass state value for new GET request
+                    setModalInput={setModalInput}
+
+                />
+                <Modal
+                    modalInput={modalInput}
+                    isVisible={modalVisibility}
+                    setVisibility={setModalVisibility}
+                    colorClass={"red"}
+                    DeleteMovieData={DeleteMovieData}
+                    deleteId={movieData}
+                />
+
             </section>
         </>
     )

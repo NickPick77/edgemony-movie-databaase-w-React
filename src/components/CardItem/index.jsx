@@ -1,31 +1,19 @@
 
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { DELETE } from '../../utils/utils';
 import styles from './styles.module.scss';
 
 
-export function CardItem({ cardData, modalVisibility, IdMoviesData }) {
+export function CardItem({ cardData, setModalVisibility, setMovieData, setModalInput }) {
 
-
-    // const DeleteMovieData = (e) => {
-    //     DELETE(e.target.value)
-    //         .then(() => {
-    //             setUpdate(!update);
-    //             navigate("/")
-    //             modalVisibility(true)
-    //         })
-    // }
-    useEffect(() => {
-
-        IdMoviesData(cardData.id)
-
-
-    }, [cardData]);
+    const setDeleteId = () => {
+        setModalInput({ text: "", yes: "yes", no: "no" })
+        setModalVisibility(true);
+        setMovieData(cardData.id);
+    }
 
     return (
         <div className={styles.CardItem}  >
-            <button value={cardData.id} onClick={() => modalVisibility(true)}>❌</button>
+            <button value={cardData.id} onClick={() => setDeleteId()}>❌</button>
             <Link to={`/edit-movie/${cardData.id}`}>
                 <h2>{cardData.title}</h2>
             </Link>
