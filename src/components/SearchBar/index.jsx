@@ -4,11 +4,13 @@ export function SearchBar({ searchResult, searchInput }) {
 
 
     return (
-        <section className={styles.search_container}>
-            <label htmlFor={styles.search_bar}>Cerca una città</label>
+        <section className={styles.search_bar}>
+            <label htmlFor="searchBar">Search by title</label>
             <input
                 type="text"
-                id="search-bar"
+                name="searchBar"
+                id="searchBar"
+                placeholder="Es: DeadPool"
                 value={searchInput}
                 onChange={(e) => searchResult(e.target.value)}
             />

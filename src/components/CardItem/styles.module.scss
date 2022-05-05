@@ -1,18 +1,21 @@
 .CardItem {
     width: 300px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid black;
     box-shadow: 0 0 12px;
     border-radius: 16px;
-    padding: 10px;
+    background-color: #fffeef;
 
-    >img {
-        width: 200px;
+
+    img {
+        width: 300px;
+        position: absolute;
+        border-radius: 16px;
     }
 
-    >button {
+    button {
         align-self: flex-end;
         background: none;
         border: none;
@@ -20,12 +23,48 @@
         font-size: 16px;
     }
 
-    >p {
+    >div {
+        position: relative;
+        top: 250px;
+        height: 180px;
+        background-color: rgba(255, 254, 239, 0.648);
+        border-radius: 16px;
+        backdrop-filter: blur(12px);
+        filter: contrast(12px);
+        display: grid;
+        align-items: center;
+        grid-template-rows: auto 10px auto;
+        grid-template-areas:
+            "info genres"
+            "year year"
+            "desc desc";
+
+
+        >div {
+            grid-area: genres;
+        }
+    }
+
+    a {
+        grid-area: info;
+    }
+
+    p {
+        grid-area: year;
+    }
+
+    .description {
+        padding: 5px;
         text-overflow: ellipsis;
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+        grid-area: desc;
+    }
+
+    .description:hover {
+        overflow: unset;
     }
 
 

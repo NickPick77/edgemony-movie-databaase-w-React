@@ -26,7 +26,7 @@ export function CardList({ searchInput, modalVisibility, setModalVisibility, set
         <div className={styles.CardList} >
             <ul className={styles.CardList_container}>
                 {moviesData &&
-                    moviesData.filter((movie) => movie.title.toLowerCase().trim().includes(searchInput))
+                    moviesData.filter((movie) => movie.title ? movie.title.toLowerCase().trim().includes(searchInput) : "")
                         .map((movie) => (
                             <CardItem
                                 cardData={movie}

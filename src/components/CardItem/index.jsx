@@ -13,20 +13,24 @@ export function CardItem({ cardData, setModalVisibility, setMovieData, setModalI
 
     return (
         <div className={styles.CardItem}  >
-            <button value={cardData.id} onClick={() => setDeleteId()}>❌</button>
-            <Link to={`/edit-movie/${cardData.id}`}>
-                <h2>{cardData.title}</h2>
-            </Link>
-            <p>{cardData.year}</p>
             <img src={cardData.img || cardData.poster} alt={cardData.title} />
-            <p>{cardData.description}</p>
-            <div className={styles.genre}>
-                <ul>
-                    {cardData.genres &&
-                        cardData.genres.map((genre, i) => (
-                            <li key={i}>{genre}</li>
-                        ))}
-                </ul>
+            <button value={cardData.id} onClick={() => setDeleteId()}>❌</button>
+            <div>
+
+                <Link to={`/edit-movie/${cardData.id}`}>
+                    <h2>{cardData.title}</h2>
+                </Link>
+                <p>{cardData.year}</p>
+
+                <p className={styles.description}>{cardData.description}</p>
+                <div className={styles.genre}>
+                    <ul>
+                        {cardData.genres &&
+                            cardData.genres.map((genre, i) => (
+                                <li key={i}>{genre}</li>
+                            ))}
+                    </ul>
+                </div>
             </div>
 
         </div>

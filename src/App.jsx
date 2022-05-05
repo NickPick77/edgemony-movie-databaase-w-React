@@ -1,6 +1,6 @@
 
 import { useState, Suspense, lazy } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { DELETE } from './utils/utils';
 import AppStyles from './AppStyles.module.scss';
 import Loading from './components/Loading';
@@ -11,6 +11,7 @@ import Loading from './components/Loading';
 const HomePage = lazy(() => import(/* webpackChunkName: "home" */"./pages/HomePage"))
 const AddMovie = lazy(() => import(/* webpackChunkName: "add" */"./pages/AddMovie"))
 const EditMovie = lazy(() => import(/* webpackChunkName: "edit" */"./pages/EditMovie"))
+const Header = lazy(() => import(/*webpackChunkname: "navbar" */ "./components/Header"))
 
 
 function App() {
@@ -42,19 +43,11 @@ function App() {
 
   return (
     <div className={AppStyles.App}>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/add-movie">Add movie</Link>
-          </li>
-        </ul>
-      </nav>
-      <Suspense fallback={<Loading />}>
-        <Routes>
-          <Route path="/edit-movie/:id" element={
+      <Header />
+
+      <Routes>
+        <Route path="/edit-movie/:id" element={
+          <Suspense fallback={<Loading />}>
             <EditMovie
               modalInput={modalInput}
               setModalInput={setModalInput}
@@ -63,15 +56,20 @@ function App() {
               DeleteMovieData={DeleteMovieData}
               setMovieData={setMovieData}
               movieData={movieData}
-            />}
-          />
-          <Route path="/add-movie" element={
+            />
+          </Suspense>}
+
+        />
+        <Route path="/add-movie" element={
+          <Suspense fallback={<Loading />}>
             <AddMovie
               modalInput={modalInput}
               setModalInput={setModalInput}
-            />}
-          />
-          <Route path="/" index element={
+            />
+          </Suspense>}
+        />
+        <Route path="/" index element={
+          <Suspense fallback={<Loading />}>
             <HomePage
               modalInput={modalInput}
               setModalInput={setModalInput}
@@ -81,12 +79,13 @@ function App() {
               setMovieData={setMovieData}
               movieData={movieData}
               update={update}
-            />}
-          />
-        </Routes>
-      </Suspense>
+            />
+          </Suspense>}
+        />
+      </Routes>
 
-    </div>
+
+    </div >
   );
 }
 
