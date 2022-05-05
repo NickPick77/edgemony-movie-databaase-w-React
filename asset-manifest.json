@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/css/main.ccc1a235.css",
-    "main.js": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/js/main.18e8028a.js",
+    "main.js": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/js/main.e7978551.js",
     "home.css": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/css/home.405827c1.chunk.css",
     "home.js": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/js/home.c5186608.chunk.js",
     "add.css": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/css/add.a3c3ead6.chunk.css",
@@ -10,7 +10,7 @@
     "edit.js": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/js/edit.d9c3a861.chunk.js",
     "index.html": "https://nickpick77.github.io/edgemony-movie-database-w-React/index.html",
     "main.ccc1a235.css.map": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/css/main.ccc1a235.css.map",
-    "main.18e8028a.js.map": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/js/main.18e8028a.js.map",
+    "main.e7978551.js.map": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/js/main.e7978551.js.map",
     "home.405827c1.chunk.css.map": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/css/home.405827c1.chunk.css.map",
     "home.c5186608.chunk.js.map": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/js/home.c5186608.chunk.js.map",
     "add.a3c3ead6.chunk.css.map": "https://nickpick77.github.io/edgemony-movie-database-w-React/static/css/add.a3c3ead6.chunk.css.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.ccc1a235.css",
-    "static/js/main.18e8028a.js"
+    "static/js/main.e7978551.js"
   ]
 }
