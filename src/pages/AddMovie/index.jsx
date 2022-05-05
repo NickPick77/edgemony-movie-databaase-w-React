@@ -13,6 +13,7 @@ export default function AddMovie({ modalInput, setModalInput }) {
         setTimeout(() => {
             setModalVisibility(false);
         }, 3000);
+        //eslint-disable-next-line
     }, [modalVisibility]);
 
 

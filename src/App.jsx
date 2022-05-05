@@ -15,7 +15,7 @@ const EditMovie = lazy(() => import(/* webpackChunkName: "edit" */"./pages/EditM
 
 function App() {
   const [modalInput, setModalInput] = useState({ ...{ text: "", yes: "", no: "" } })
-  const navigate = useNavigate()
+  //const navigate = useNavigate()
   const [update, setUpdate] = useState(false)
   const [movieData, setMovieData] = useState([])
   const [modalVisibility, setModalVisibility] = useState(false);

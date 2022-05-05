@@ -8,7 +8,7 @@ import styles from "./styles.module.scss";
 
 export default function HomePage({ DeleteMovieData, modalInput, setModalInput, modalVisibility, setModalVisibility, movieData, setMovieData }) {
 
-    const [update, setUpdate] = useState(false)
+    //const [update, setUpdate] = useState(false)
 
     const [searchInput, setSearchInput] = useState("")
 
