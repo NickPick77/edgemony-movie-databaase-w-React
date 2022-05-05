@@ -26,7 +26,7 @@ function App() {
       .then(() => {
         console.log(e)
         setUpdate(!update);
-        navigate("/")
+        //navigate("/")
         setModalVisibility(!true)
         setModalInput({ text: "Film eliminato correttamente" })
         console.log("homepage", movieData.id)

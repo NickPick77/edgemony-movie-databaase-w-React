@@ -9,33 +9,8 @@ import styles from "./styles.module.scss";
 export default function HomePage({ DeleteMovieData, modalInput, setModalInput, modalVisibility, setModalVisibility, movieData, setMovieData }) {
 
     const [update, setUpdate] = useState(false)
-    //const [modalVisibility, setModalVisibility] = useState(false);
+
     const [searchInput, setSearchInput] = useState("")
-    //const [movieData, setMovieData] = useState([])
-    //const modalInput = { ... }
-
-    // useEffect(() => {
-    //     
-
-    //const DeleteMovieData = (e) => {
-    //
-    //    DELETE(e)
-    //        .then(() => {
-    //            console.log(e)
-    //            setUpdate(!update);
-    //            navigate("/")
-    //            setModalVisibility(!true)
-    //            setModalInput({ text: "Film eliminato correttamente" })
-    //            console.log("homepage", movieData.id)
-    //        }).then(() => {
-    //            setModalVisibility(true)
-    //            setTimeout(() => {
-    //                setModalVisibility(false);
-    //            }, 3000);
-    //
-    //        })
-    //
-    //}
 
 
 

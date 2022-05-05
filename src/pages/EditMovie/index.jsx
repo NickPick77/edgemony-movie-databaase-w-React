@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { GET } from "../../utils/utils";
-import { Modal } from "../../components/Modal";
 
+import { Modal } from "../../components/Modal";
 import { CardItem } from "../../components/CardItem";
 import { AddMovieForm } from "../../components/AddMovieForm";
 
@@ -11,21 +11,15 @@ import styles from "./styles.module.scss";
 
 export default function EditMovie({ DeleteMovieData, modalInput, setModalInput, modalVisibility, setModalVisibility, movieData, setMovieData }) {
     const location = useLocation();
-    //const [modalVisibility, setModalVisibility] = useState(false);
     const [update, setUpdate] = useState(false)
-    //const [movieData, setMovieData] = useState({});
     const movieId = location.pathname.split("/").reverse()[0];
 
     useEffect(() => {
         GET(movieId).then((data) => setMovieData(data));
+        //eslint-disable-next-line
     }, [update]);
 
-    useEffect(() => {
 
-        setTimeout(() => {
-            setModalVisibility(false);
-        }, 3000);
-    }, [modalVisibility]);
 
     return (
         <section className={styles.EditMovie}>
@@ -45,10 +39,10 @@ export default function EditMovie({ DeleteMovieData, modalInput, setModalInput, 
             />
             <Modal
                 modalInput={modalInput}
-
                 isVisible={modalVisibility}
+                setVisibility={setModalVisibility}
                 colorClass={"blue"}
-                deleteMovieData={DeleteMovieData}
+                DeleteMovieData={DeleteMovieData}
                 deleteId={movieData}
             />
         </section>

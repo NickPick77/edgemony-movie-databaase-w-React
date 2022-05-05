@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 
-export function Modal({ isVisible, setVisibility, colorClass, modalInput, deleteMovieData, deleteId }) {
+export function Modal({ isVisible, setVisibility, colorClass, modalInput, DeleteMovieData, deleteId }) {
 
     //console.log(modalInput.yes)
     const color = (colorClass === "green") ? styles.green : (colorClass === "blue") ? styles.blue : (colorClass === "red") ? styles.red : ""
@@ -18,7 +18,7 @@ export function Modal({ isVisible, setVisibility, colorClass, modalInput, delete
                         <div className={styles.Button_Container}>
                             <button
                                 className={styles.Modal_Button_Confirm}
-                                onClick={(() => deleteMovieData(deleteId))}
+                                onClick={(() => DeleteMovieData(deleteId))}
                             >
                                 <span className={styles.Modal_Button_Span}>{modalInput.yes}</span>
                             </button>
