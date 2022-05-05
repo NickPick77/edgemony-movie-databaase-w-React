@@ -1,6 +1,6 @@
 
 import { useState, Suspense, lazy } from 'react';
-import { Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { DELETE } from './utils/utils';
 import AppStyles from './AppStyles.module.scss';
 import Loading from './components/Loading';
@@ -80,6 +80,7 @@ function App() {
               DeleteMovieData={DeleteMovieData}
               setMovieData={setMovieData}
               movieData={movieData}
+              update={update}
             />}
           />
         </Routes>

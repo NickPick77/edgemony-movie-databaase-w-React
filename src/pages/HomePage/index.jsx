@@ -6,7 +6,7 @@ import { SearchBar } from "../../components/SearchBar";
 import styles from "./styles.module.scss";
 
 
-export default function HomePage({ DeleteMovieData, modalInput, setModalInput, modalVisibility, setModalVisibility, movieData, setMovieData }) {
+export default function HomePage({ DeleteMovieData, modalInput, setModalInput, modalVisibility, setModalVisibility, movieData, setMovieData, update }) {
 
     //const [update, setUpdate] = useState(false)
 
