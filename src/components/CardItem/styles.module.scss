@@ -6,73 +6,109 @@
     align-items: center;
     box-shadow: 0 0 12px;
     border-radius: 16px;
-    background-color: #fffeef;
+    background-color: #ffffff;
+    color: #ffffff;
+    font-weight: 200;
 
 
-    img {
+    .card_img {
         width: 300px;
         position: absolute;
         border-radius: 16px;
     }
 
-    button {
+    .card_delete_btn {
         align-self: flex-end;
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 16px;
+        background-color: rgba(52, 52, 52, 0.8);
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-right: 10px;
+        padding: 5px;
+        z-index: 1;
     }
 
-    >div {
+    .card_delete_btn:focus {
+        box-shadow: 0 0 0;
+    }
+
+    .CardItem_info {
         position: relative;
         top: 250px;
+        width: inherit;
         height: 180px;
-        background-color: rgba(255, 254, 239, 0.648);
+        background-color: rgba(52, 52, 52, 0.648);
         border-radius: 16px;
         backdrop-filter: blur(12px);
         filter: contrast(12px);
         display: grid;
         align-items: center;
         grid-template-rows: auto 10px auto;
+        grid-template-columns: 3fr 1fr;
         grid-template-areas:
             "info genres"
             "year year"
             "desc desc";
 
+        .card_title,
+        a {
+            grid-area: info;
+            padding-left: 5px;
+            margin: 0;
+            color: white;
+            text-decoration: none;
+            font-weight: 200;
+        }
 
-        >div {
-            grid-area: genres;
+        a:hover {
+            text-decoration: underline #03e9f4;
+            filter: hue-rotate(270deg);
+        }
+
+        .card_year {
+            grid-area: year;
+            margin: 0;
+            padding-left: 10px;
+            font-size: 0.7em;
+        }
+
+        .description {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            grid-area: desc;
+            padding-left: 10px;
+            padding-right: 15px;
+        }
+
+    }
+
+    .genres_container {
+        grid-area: genres;
+        display: grid;
+        justify-content: start;
+        justify-items: center;
+
+        .genres_ul {
+            padding: 10px;
+
+
+            .genre_li {
+                list-style: none;
+                font-size: 0.8em;
+                font-weight: 400;
+            }
         }
     }
-
-    a {
-        grid-area: info;
-    }
-
-    p {
-        grid-area: year;
-    }
-
-    .description {
-        padding: 5px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        grid-area: desc;
-    }
-
-    .description:hover {
-        overflow: unset;
-    }
-
-
 }
 
-
-.genre {
-    width: inherit;
-    display: flex;
-    justify-content: flex-start;
+.CardItem_ext {
+    background-color: white;
+    border: 2px solid red;
 }

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter as Router } from 'react-router-dom';
 import indexStyles from './indexStyles.module.scss';
 import App from './App';
+import "normalize.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -5,5 +5,17 @@
     color: white;
     justify-self: center;
     text-transform: uppercase;
+    margin-bottom: 20px;
 
+    .search_bar_label {
+        letter-spacing: 2px;
+
+
+    }
+
+    .search_bar_input {
+        width: 300px;
+        padding: 5px;
+        border-radius: 6px;
+    }
 }

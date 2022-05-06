@@ -14,20 +14,22 @@ export function Modal({ isVisible, setVisibility, colorClass, modalInput, Delete
                 ) :
                 isVisible && (
                     <div className={styles.Modal_Confirm}>
-                        <p>Vuoi davvero eliminare il Film?</p>
-                        <div className={styles.Button_Container}>
-                            <button
-                                className={styles.Modal_Button_Confirm}
-                                onClick={(() => DeleteMovieData(deleteId))}
-                            >
-                                <span className={styles.Modal_Button_Span}>{modalInput.yes}</span>
-                            </button>
-                            <button
-                                className={styles.Modal_Button_Undo}
-                                onClick={(() => setVisibility(false))}
-                            >
-                                <span className={styles.Modal_Button_Span}>{modalInput.no}</span>
-                            </button>
+                        <div className={styles.Modal_Container}>
+                            <p>Vuoi davvero eliminare il Film?</p>
+                            <div className={styles.Button_Container}>
+                                <button
+                                    className={styles.Modal_Button_Confirm}
+                                    onClick={(() => DeleteMovieData(deleteId))}
+                                >
+                                    <span className={styles.Modal_Button_Span}>{modalInput.yes}</span>
+                                </button>
+                                <button
+                                    className={styles.Modal_Button_Undo}
+                                    onClick={(() => setVisibility(false))}
+                                >
+                                    <span className={styles.Modal_Button_Span}>{modalInput.no}</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 )}

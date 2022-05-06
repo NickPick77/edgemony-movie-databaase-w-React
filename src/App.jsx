@@ -3,7 +3,7 @@ import { useState, Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { DELETE } from './utils/utils';
 import AppStyles from './AppStyles.module.scss';
-import Loading from './components/Loading';
+import Loading from './components/Loading/Loading';
 //import { HomePage } from '';
 //import { AddMovie } from './pages/AddMovie';
 //import { EditMovie } from './pages/EditMovie';

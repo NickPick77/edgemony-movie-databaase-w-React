@@ -7,12 +7,8 @@ import styles from "./styles.module.scss";
 
 
 export default function HomePage({ DeleteMovieData, modalInput, setModalInput, modalVisibility, setModalVisibility, movieData, setMovieData, update }) {
-
-    //const [update, setUpdate] = useState(false)
-
+    const [cardlisting, setCardListing] = useState(true)
     const [searchInput, setSearchInput] = useState("")
-
-
 
     return (
         <>
@@ -25,6 +21,7 @@ export default function HomePage({ DeleteMovieData, modalInput, setModalInput, m
                     setMovieData={setMovieData}
                     update={update}//pass state value for new GET request
                     setModalInput={setModalInput}
+                    cardlisting={cardlisting}
 
                 />
                 <Modal
