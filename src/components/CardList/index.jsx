@@ -4,15 +4,9 @@ import { GET } from '../../utils/utils';
 import styles from './styles.module.scss';
 
 export function CardList({ searchInput, modalVisibility, setModalVisibility, setMovieData, update, setModalInput, cardlisting }) {
-    //const [modalVisibility, setModalVisibility] = useState(false);
     const [moviesData, setMoviesData] = useState([]);
 
 
-    // useEffect(() => {
-    //
-    //     GET().then((movie) => setMoviesData(movie))
-    //
-    // }, []);
     useEffect(() => {
 
         GET().then((movie) => {

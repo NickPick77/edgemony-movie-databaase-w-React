@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { CardList } from "../../components/CardList";
 import { Modal } from "../../components/Modal";
@@ -7,8 +7,12 @@ import styles from "./styles.module.scss";
 
 
 export default function HomePage({ DeleteMovieData, modalInput, setModalInput, modalVisibility, setModalVisibility, movieData, setMovieData, update }) {
-    const [cardlisting, setCardListing] = useState(true)
+    const [cardlisting, setCardListing] = useState(false)
     const [searchInput, setSearchInput] = useState("")
+
+    useEffect(() => {
+        setCardListing(true)
+    }, [])
 
     return (
         <>
