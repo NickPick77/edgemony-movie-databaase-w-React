@@ -4,10 +4,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 12px;
     border-radius: 16px;
     background-color: #ffffff;
     color: #ffffff;
+    box-shadow: 0 0 12px rgb(126 221 3);
     font-weight: 200;
 
 
@@ -24,12 +24,13 @@
         cursor: pointer;
         background-color: rgba(52, 52, 52, 0.8);
         border-radius: 50%;
-        box-shadow: 0 0 0 2px;
+        box-shadow: 0 0 6px 1px rgb(246, 4, 12);
         font-size: 12px;
         margin-top: 10px;
         margin-right: 10px;
         padding: 5px;
         z-index: 1;
+        transition: all 0.5s ease-in-out;
     }
 
     .card_delete_btn:focus {
@@ -38,13 +39,13 @@
 
     .CardItem_info {
         position: relative;
-        top: 250px;
-        width: inherit;
+        top: 240px;
+        width: 306px;
         height: 180px;
         background-color: rgba(52, 52, 52, 0.648);
         border-radius: 16px;
+
         backdrop-filter: blur(12px);
-        filter: contrast(12px);
         display: grid;
         align-items: center;
         grid-template-rows: auto 10px auto;
@@ -204,6 +205,53 @@
                 list-style: none;
                 font-size: 0.8em;
                 font-weight: 400;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 600px) {
+    .CardItem_ext {
+        display: flex;
+        flex-direction: row;
+
+        .card_img {
+            min-width: 450px;
+            border-radius: 16px;
+        }
+
+        .card_delete_btn {
+            top: -325px;
+            left: 30%;
+        }
+
+        .CardItem_info {
+            height: 100%;
+            top: 0;
+            right: 9%;
+            display: flex;
+            flex-direction: column;
+
+            .card_title {
+                margin-top: 50px;
+            }
+
+            .description {
+                margin-top: 200px;
+                margin-left: 25px;
+            }
+
+            .genres_container {
+                margin-top: 150px;
+
+                .genre_li {
+                    display: inline-block;
+                    padding: 10px;
+                    margin: 10px;
+                    color: black;
+                    background-color: white;
+                    border-radius: 16px;
+                }
             }
         }
     }
